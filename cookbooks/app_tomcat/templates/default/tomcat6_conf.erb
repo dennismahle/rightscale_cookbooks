@@ -61,6 +61,13 @@ CATALINA_PID="/var/run/tomcat6.pid"
 #JVM tuning options
 # see http://www.tomcatexpert.com/blog/2011/11/22/performance-tuning-jvm-running-tomcat
 
+# WATCHWITH OPTS
+CATALINA_OPTS="$CATALINA_OPTS -DJDBC_CONNECTION_STRING<%=@watchwith_connection_string%>"
+CATALINA_OPTS="$CATALINA_OPTS -DPARAM1<%=@watchwith_db_username%>"
+CATALINA_OPTS="$CATALINA_OPTS -DPARAM2<%=@watchwith_db_password%>"
+CATALINA_OPTS="$CATALINA_OPTS -DPARAM3<%=@watchwith_ecms_url%>"
+CATALINA_OPTS="$CATALINA_OPTS -DPARAM4<%=@watchwith_ecms_host%>"
+
 # XMX and XMS
 CATALINA_OPTS="$CATALINA_OPTS -Xms<%=@java_xms%> -Xmx<%=@java_xmx%>"
 

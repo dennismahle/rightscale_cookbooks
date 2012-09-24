@@ -17,6 +17,42 @@ depends "rightscale"
 
 recipe  "app_tomcat::default", "Installs the Tomcat application server."
 
+# Watchwith attributes
+# JDBC Connection String
+attribute "app_tomcat/watchwith/jdbc_connection",
+  :display_name => "Database Connection String",
+  :description => "Database Connection String",
+  :required => "required",
+  :recipes => ["app_tomcat::default"]
+
+# DB Username
+attribute "app_tomcat/watchwith/db_username",
+  :display_name => "Database Username",
+  :description => "Database Username",
+  :required => "required",
+  :recipes => ["app_tomcat::default"]
+
+# DB Password
+attribute "app_tomcat/watchwith/db_password",
+  :display_name => "Database Password",
+  :description => "Database Password",
+  :required => "required",
+  :recipes => ["app_tomcat::default"]
+
+# ECMS URL
+attribute "app_tomcat/watchwith/ecms_url",
+  :display_name => "ECMS URL",
+  :description => "ECMS URL",
+  :required => "required",
+  :recipes => ["app_tomcat::default"]
+
+# ECMS HOST
+attribute "app_tomcat/watchwith/ecms_host",
+  :display_name => "ECMS HOST",
+  :description => "ECMS HOST",
+  :required => "required",
+  :recipes => ["app_tomcat::default"]
+
 # optional attributes
 attribute "app_tomcat/db_name",
   :display_name => "Database Schema Name",
